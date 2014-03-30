@@ -32,7 +32,7 @@ app.directive("dial", function(){
   return {
     restrict: "A",
     replace:true,
-    template: '<img id="dial" class="dial" src="dial.png"></span>',
+    template: '<img id="dial" class="dial" src="images/dial.png"></span>',
     link: function(scope, element, attrs) {
       var rotationSnap = 20;
       var dialValue = 0;
