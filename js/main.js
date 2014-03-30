@@ -47,14 +47,14 @@ app.directive("dial", function(){
     link: function(scope, element, attrs, mapController) {
       var rotationSnap = 20;
       var rotationMin = 10;
-      var rotationMax = 350;
+      var rotationMax = 360;
       var dialValue = 0;
       var dial = document.getElementById('dial');
       Draggable.create(dial, {
         type:"rotation",
         throwProps:true,
         dragResistance :0.99,
-        edgeResistance:0.75,
+        edgeResistance:0.99,
         maxDuration:2,
         bounds:{minRotation:rotationMin, maxRotation:rotationMax},
         snap:function(endValue) {
