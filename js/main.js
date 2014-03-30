@@ -53,9 +53,9 @@ app.directive("dial", function(){
       Draggable.create(dial, {
         type:"rotation",
         throwProps:true,
-        dragResistance :0.998,
-        //edgeResistance:0.999,
-        maxDuration:21,
+        dragResistance :0.996,
+        edgeResistance:0.5,
+        maxDuration:0.5,
         bounds:{minRotation:rotationMin, maxRotation:rotationMax},
         snap:function(endValue) {
           dialValue = Math.round(endValue / rotationSnap) * rotationSnap;
@@ -63,8 +63,7 @@ app.directive("dial", function(){
         },
         onThrowComplete:function() {
           mapController.updateZoom(dialValue);
-        },
-        lockAxis:true
+        }
       });
       TweenMax.to(dial, 5, {css:{rotation:320},ease:Elastic.easeOut});
     }
