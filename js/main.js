@@ -3,7 +3,17 @@ app.directive("map", function(){
   return {
     restrict: "A",
     replace:true,
-    template: '<div class="map" id="map"></div>',
+    transclude:true,
+    template: '<div><div class="map" id="map"></div><span ng-transclude></span></div>',
+    controller:function($scope){
+      this.updateZoom = function(zoomLevel){
+        var approximateZoom = 8 + Math.round(zoomLevel / 40);
+        console.log('Updating zoom', approximateZoom);
+        //$scope.map.setZoom(zoomLevel/14)
+
+        $scope.map.setZoom(approximateZoom);
+      }
+    },
     link: function(scope, element, attrs) {
       var latitude = attrs.latitude;
       var longitude = attrs.longitude;
@@ -16,9 +26,9 @@ app.directive("map", function(){
         mapTypeId: google.maps.MapTypeId.ROADMAP
       };
 
-      var map = new google.maps.Map(document.getElementById(attrs.id),
+      var map = new google.maps.Map(document.getElementById('map'),
         mapOptions);
-
+      scope.map = map;
       var marker = new google.maps.Marker({
         position: placeLatlng,
         map: map,
@@ -33,31 +43,30 @@ app.directive("dial", function(){
     restrict: "A",
     replace:true,
     template: '<img id="dial" class="dial" src="images/dial.png"></span>',
-    link: function(scope, element, attrs) {
+    require:'^map',
+    link: function(scope, element, attrs, mapController) {
       var rotationSnap = 20;
+      var rotationMin = 0;
+      var rotationMax = 360;
       var dialValue = 0;
-      Draggable.create("#dial", {
+      var dial = document.getElementById('dial');
+      Draggable.create(dial, {
         type:"rotation",
         throwProps:true,
         dragResistance :0.99,
+        edgeResistance:0.75,
         maxDuration:2,
+        bounds:{minRotation:rotationMin, maxRotation:rotationMax},
         snap:function(endValue) {
-          if (endValue < 10) {
-            endValue = 10;
-          } else if (endValue > 350){
-            endValue = 350;
-          } else {
-            endValue = Math.round(endValue / rotationSnap) * rotationSnap;
-          }
-          dialValue = endValue;
-          return endValue;
+          dialValue = Math.round(endValue / rotationSnap) * rotationSnap;
+          return dialValue;
         },
         onThrowComplete:function() {
-          // Add callback to map update here
-          console.log("Throw complete, end value is", dialValue);
+          mapController.updateZoom(dialValue);
         },
         lockAxis:true
       });
+      TweenMax.to(dial, 5, {css:{rotation:320},ease:Elastic.easeOut});
     }
   }
 });
