@@ -5,8 +5,8 @@ h1{
     left: 120px;
     -webkit-transform: translate3d(0px, 0px, 0px);
     -webkit-user-select: none;
-    height: 510px;
-    width: 510px;
+    height: 550px;
+    width: 550px;
 }
 .map{
     width: 50%;

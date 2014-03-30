@@ -53,9 +53,9 @@ app.directive("dial", function(){
       Draggable.create(dial, {
         type:"rotation",
         throwProps:true,
-        dragResistance :0.99,
-        edgeResistance:0.99,
-        maxDuration:2,
+        dragResistance :0.998,
+        //edgeResistance:0.999,
+        maxDuration:21,
         bounds:{minRotation:rotationMin, maxRotation:rotationMax},
         snap:function(endValue) {
           dialValue = Math.round(endValue / rotationSnap) * rotationSnap;
