@@ -42,12 +42,12 @@ app.directive("dial", function(){
   return {
     restrict: "A",
     replace:true,
-    template: '<img id="dial" class="dial" src="images/dial.png"></span>',
+    template: '<img id="dial" class="dial" src="images/dial.png">',
     require:'^map',
     link: function(scope, element, attrs, mapController) {
       var rotationSnap = 20;
-      var rotationMin = 0;
-      var rotationMax = 360;
+      var rotationMin = 10;
+      var rotationMax = 350;
       var dialValue = 0;
       var dial = document.getElementById('dial');
       Draggable.create(dial, {

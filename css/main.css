@@ -1,6 +1,13 @@
 h1{
     text-align: center;
 }
+.dial{
+    left: 120px;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    -webkit-user-select: none;
+    height: 510px;
+    width: 510px;
+}
 .map{
     width: 50%;
     height: 500px;
@@ -13,10 +20,12 @@ h1{
     width: 50%;
     display: inline-block;
 }
-.dial{
-    left: 120px;
-    -webkit-transform: translate3d(0px, 0px, 0px);
-    -webkit-user-select: none;
-    height: 510px;
-    width: 510px;
+.zoom-label-max{
+    margin-left: 100px;
+    font-size: 20px;
+}
+.zoom-label-min{
+    font-size: 20px;
+    float:right;
+    margin-right: 180px;
 }
