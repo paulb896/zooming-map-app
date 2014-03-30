@@ -1,0 +1,18 @@
+h1{
+    text-align: center;
+}
+.map{
+    width: 500px;
+    height: 500px;
+    display: inline-block;
+}
+.map-app{
+    margin-left: 100px;
+}
+.dial{
+    left: 120px;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    -webkit-user-select: none;
+    height: 510px;
+    width: 510px;
+}

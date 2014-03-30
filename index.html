@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Zooming Map using Angular Directives</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="TweenMax.min.js"></script>
+    <script src="ThrowPropsPlugin.min.js"></script>
+    <script src="Draggable.min.js"></script>
+</head>
+<body>
+    <h1>Zooming Map using Angular Directives</h1>
+    <div ng-app="zoomingMapApp" class="map-app">
+        <span map latitude="49.2755814" longitude="-123.1248862" place="Vancouver Yaletown" zoom="14"></span>
+        <span dial></span>
+    </div>
+    <script src="angular.min.js"></script>
+    <script src="main.js"></script>
+    <script src="googleMaps.js"></script>
+</body>
+</html>
