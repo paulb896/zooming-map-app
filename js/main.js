@@ -4,7 +4,7 @@ app.directive("map", function(){
     restrict: "A",
     replace:true,
     transclude:true,
-    template: '<div><div class="map" id="map"></div><span ng-transclude></span></div>',
+    template: '<div><div class="map" id="map"></div><span class="map-controls" ng-transclude></span></div>',
     controller:function($scope){
       this.updateZoom = function(zoomLevel){
         var approximateZoom = 8 + Math.round(zoomLevel / 40);

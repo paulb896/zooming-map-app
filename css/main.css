@@ -2,12 +2,16 @@ h1{
     text-align: center;
 }
 .map{
-    width: 500px;
+    width: 50%;
     height: 500px;
     display: inline-block;
 }
 .map-app{
-    margin-left: 100px;
+    margin-left: 50px;
+}
+.map-controls{
+    width: 50%;
+    display: inline-block;
 }
 .dial{
     left: 120px;
