@@ -11,10 +11,24 @@
 <body>
     <h1>Zooming Map using Angular Directives</h1>
     <div ng-app="zoomingMapApp" class="map-app">
+        <!-- Uses map directive -->
         <span map latitude="49.2755814" longitude="-123.1248862" place="Vancouver Yaletown" zoom="14">
             <span class="zoom-label-max">Maximum Zoom</span><span class="zoom-label-min">Minimum Zoom</span>
+
+            <!-- Uses dial directive -->
             <span dial></span>
         </span>
+
+        <!-- Pre-load templates -->
+        <script type="text/ng-template" id="map.html">
+            <span>
+                <span class="map" id="map"></span>
+                <span class="map-controls" ng-transclude></span>
+            </span>
+        </script>
+        <script type="text/ng-template" id="dial.html">
+            <img id="dial" class="dial" src="images/dial.png">
+        </script>
     </div>
     <script src="js/external/angular.min.js"></script>
     <script src="js/main.js"></script>

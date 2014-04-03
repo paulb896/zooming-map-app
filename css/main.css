@@ -9,7 +9,7 @@ h1{
     width: 550px;
 }
 .map{
-    width: 50%;
+    width: 48%;
     height: 500px;
     display: inline-block;
 }
@@ -17,8 +17,9 @@ h1{
     margin-left: 50px;
 }
 .map-controls{
-    width: 50%;
+    width: 48%;
     display: inline-block;
+    float: right;
 }
 .zoom-label-max{
     margin-left: 60px;

@@ -1,15 +1,13 @@
-var app = angular.module("zoomingMapApp", [])
-app.directive("map", function(){
+var app = angular.module('zoomingMapApp', [])
+app.directive('map', function(){
   return {
-    restrict: "A",
+    restrict: 'A',
     replace:true,
     transclude:true,
-    template: '<div><div class="map" id="map"></div><span class="map-controls" ng-transclude></span></div>',
+    templateUrl: 'map.html',
     controller:function($scope){
       this.updateZoom = function(zoomLevel){
         var approximateZoom = 8 + Math.round(zoomLevel / 40);
-        console.log('Updating zoom', approximateZoom);
-        //$scope.map.setZoom(zoomLevel/14)
 
         $scope.map.setZoom(approximateZoom);
       }
@@ -38,11 +36,11 @@ app.directive("map", function(){
     }
   }
 });
-app.directive("dial", function(){
+app.directive('dial', function(){
   return {
-    restrict: "A",
+    restrict: 'A',
     replace:true,
-    template: '<img id="dial" class="dial" src="images/dial.png">',
+    templateUrl: 'dial.html',
     require:'^map',
     link: function(scope, element, attrs, mapController) {
       var rotationSnap = 20;
@@ -51,15 +49,15 @@ app.directive("dial", function(){
       var dialValue = 0;
       var dial = document.getElementById('dial');
       Draggable.create(dial, {
-        type:"rotation",
+        type:'rotation',
         throwProps:true,
         dragResistance :0.996,
-        edgeResistance:0.5,
-        maxDuration:0.5,
+        edgeResistance:0.9,
         bounds:{minRotation:rotationMin, maxRotation:rotationMax},
         snap:function(endValue) {
-          dialValue = Math.round(endValue / rotationSnap) * rotationSnap;
-          return dialValue;
+          //dialValue = Math.round(endValue / rotationSnap) * rotationSnap;
+          dialValue = endValue;
+          return endValue;
         },
         onThrowComplete:function() {
           mapController.updateZoom(dialValue);
