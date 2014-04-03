@@ -4,11 +4,10 @@ app.directive('map', function(){
     restrict: 'A',
     replace:true,
     transclude:true,
-    templateUrl: 'map.html',
+    templateUrl: 'partials/map.html',
     controller:function($scope){
       this.updateZoom = function(zoomLevel){
         var approximateZoom = 8 + Math.round(zoomLevel / 40);
-
         $scope.map.setZoom(approximateZoom);
       }
     },
@@ -40,10 +39,9 @@ app.directive('dial', function(){
   return {
     restrict: 'A',
     replace:true,
-    templateUrl: 'dial.html',
+    templateUrl: 'partials/dial.html',
     require:'^map',
     link: function(scope, element, attrs, mapController) {
-      var rotationSnap = 20;
       var rotationMin = 10;
       var rotationMax = 360;
       var dialValue = 0;
@@ -55,7 +53,7 @@ app.directive('dial', function(){
         edgeResistance:0.9,
         bounds:{minRotation:rotationMin, maxRotation:rotationMax},
         snap:function(endValue) {
-          //dialValue = Math.round(endValue / rotationSnap) * rotationSnap;
+
           dialValue = endValue;
           return endValue;
         },
