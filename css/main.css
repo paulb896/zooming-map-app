@@ -1,3 +1,22 @@
+
+
+@media only screen and (min-width: 1200px) {
+    .map{
+        width: 66%;
+        float: left;
+        height: 500px;
+        display: inline-table;
+    }
+}
+
+@media only screen and (max-width: 1199px) {
+    .map{
+        width: 95%;
+        height: 500px;
+        display: inline-block;
+    }
+}
+
 h1{
     text-align: center;
 }
@@ -5,20 +24,17 @@ h1{
     left: 120px;
     -webkit-transform: translate3d(0px, 0px, 0px);
     -webkit-user-select: none;
-    height: 550px;
-    width: 550px;
+    height: 430px;
+    width: 430px;
 }
-.map{
-    width: 48%;
-    height: 500px;
-    display: inline-block;
-}
+
+
 .map-app{
     margin-left: 50px;
 }
 .map-controls{
-    width: 48%;
-    display: inline-block;
+    width: 430px;
+    display: inline-table;
     float: right;
 }
 .zoom-label-max{
@@ -27,5 +43,6 @@ h1{
 }
 .zoom-label-min{
     font-size: 20px;
-    margin-left: 100px;
+    margin-right: 27%;
+    float:right;
 }
