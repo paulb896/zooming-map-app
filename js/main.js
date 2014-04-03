@@ -1,4 +1,4 @@
-var app = angular.module('zoomingMapApp', [])
+var app = angular.module('zoomingMapApp', []);
 app.directive('map', function(){
   return {
     restrict: 'A',
