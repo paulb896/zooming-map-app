@@ -1,5 +1,7 @@
 h1{
     text-align: center;
+    font-weight: 600;
+    font-size: 40px;
 }
 .dial{
     left: 120px;
@@ -21,7 +23,7 @@ h1{
     right:-1%;
     top: 530px;
     position: absolute;
-    opacity: 0.6;
+    opacity: 0.4;
 }
 .zoom-label-max{
     margin-left: 60px;
