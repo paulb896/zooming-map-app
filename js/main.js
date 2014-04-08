@@ -49,9 +49,11 @@ app.directive('dial', function(){
       Draggable.create(dial, {
         type:'rotation',
         throwProps:true,
-        dragResistance :0.996,
-        edgeResistance:0.9,
+        dragResistance :0.05,
+        //edgeResistance:0.15,
         bounds:{minRotation:rotationMin, maxRotation:rotationMax},
+        overshootThreshold:1,
+        maxDuration:0.001,
         snap:function(endValue) {
 
           dialValue = endValue;
