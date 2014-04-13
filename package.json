@@ -2,7 +2,7 @@
   "name": "simple-server-map-directive",
   "preferGlobal": true,
   "version": "0.0.2",
-  "author": "Nodejitsu <support@nodejitsu.com>",
+  "author": "Paul Beauchamp",
   "description": "Simple express server for angular directives",
   "contributors": [
     {
