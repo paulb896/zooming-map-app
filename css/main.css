@@ -2,6 +2,11 @@ h1{
     text-align: center;
     font-weight: 600;
     font-size: 40px;
+    position:absolute;
+    text-align:center;
+    width:100%;
+    z-index:100;
+    color:rgb(56,50,50);
 }
 .dial{
     left: 120px;
