@@ -25,8 +25,7 @@ h1{
     margin-left: 50px;
 }
 .map-controls{
-    right:-2%;
-    top: 280px;
+    top: 360px;
     position: absolute;
     opacity: 0.3;
 }
