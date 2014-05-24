@@ -25,10 +25,10 @@ h1{
     margin-left: 50px;
 }
 .map-controls{
-    right:-1%;
-    top: 530px;
+    right:-2%;
+    top: 280px;
     position: absolute;
-    opacity: 0.4;
+    opacity: 0.3;
 }
 .zoom-label-max{
     margin-left: 60px;
