@@ -1,5 +1,5 @@
 {
-  "name": "simple-server-map-directive",
+  "name": "angularjs-map-directive",
   "preferGlobal": true,
   "version": "0.0.2",
   "author": "Paul Beauchamp",
@@ -19,13 +19,14 @@
   "main": "./server",
   "repository": {
     "type": "git",
-    "url": "https://github.com/visionmedia/express.git"
+    "url": "https://github.com/paulb896/ZoomingMapApp"
   },
   "keywords": [
     "server"
   ],
   "dependencies" : {
-    "express":"*"
+    "express":"~4.8.7",
+    "ejs":"~1.0.0"
   },
   "engines": {
     "node": ">=0.6"
