@@ -11,25 +11,27 @@ Zooming Map using Angular Directives
 
 ## Getting Started
 
-In the command prompt:
 
-Clone the repository:
-```
+* In the command prompt:
 
- git clone https://github.com/paulb896/ZoomingMapApp
+    Clone the repository:
 
-```
+        git clone https://github.com/paulb896/ZoomingMapApp
 
-In the ZoomingMapApp directory:
-```
 
- npm install
+* In the ZoomingMapApp directory:
 
-```
+    Install node dependencies
 
-Start server:
-```
+        npm install
 
- node server
+    Run grunt tasks
 
-```
+        node node_modules/grunt-cli/bin/grunt
+
+
+
+    Start server
+
+        node server
+
