@@ -27,6 +27,26 @@
             <img id="dial" class="dial" src="images/dial2.png">
         </script>
     </div>
+    <div style="margin-top:1000px; position: absolute;">
+      <pre><code>
+        > npm install
+        > grunt
+        > node server.js (view on http://localhost:8111)
+
+        &lt;link href="css/main.css" rel="stylesheet" type="text/css" media="all" /&gt;
+
+        &lt;script src="dist/angularjs-map-directive.js"&gt;&lt;/script&gt;
+        angular.module('someApp', ['zoomingMapApp']);
+
+        &lt;span map latitude="49.2755814" longitude="-123.1248862" place="Vancouver Yaletown" zoom="14"&gt;
+            &lt;span class="zoom-label-max">III&lt;/span&gt;&lt;span class="zoom-label-min">I&lt;/span&gt;
+            &lt;!-- Uses dial directive --&gt;
+            &lt;span dial min-rotation="10" max-rotation="360" start-zoom="220"&gt;&lt;/span&gt;
+            &lt;span class="zoom-label-min">II&lt;/span&gt;
+        &lt;/span&gt;
+
+      </code></pre>
+    </div>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
     <script src="dist/angularjs-map-directive.js"></script>
 </body>
