@@ -8,6 +8,7 @@ Zooming Map using Angular Directives
 
 - node.js (http://nodejs.org/download/)
 - npm (included with node.js)
+- Google maps js
 
 ## Getting Started
 
@@ -34,4 +35,3 @@ Zooming Map using Angular Directives
     Start server
 
         node server
-
